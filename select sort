@@ -1,0 +1,38 @@
+//选择排序 指针访问数组
+#include <iostream>
+using namespace std;
+#define t 5 
+void select_sort(int *a,int n)
+{
+	int i,j;
+	for(i = 0;i<n-1;i++)
+	{
+		for(j = i+1;j < n;j++)
+		{
+			if(*(a+i)>*(a+j))
+			{
+				int temp;
+				temp = *(a+i);
+				*(a+i) = *(a+j);
+				*(a+j) = temp;
+			}
+		}
+	}
+	for(i = 0;i < n;i++)
+	{
+		cout<<*(a+i)<<' ';
+	}
+}
+int main()
+{
+	int a[t];
+	int i;
+	for(i = 0;i < t;i++)
+	{
+		cin>>a[i];
+	}
+	select_sort(a,t);
+	return 0;
+}
+
+ 
